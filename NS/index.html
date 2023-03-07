@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title> ぞろ目が出たら当たり</title>
+    <meta name ="robots" content="noindex,nofollow">
+    <meta name ="description" content="これはJSの課題作品です。">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            let num1;
+            let num2;
+
+            function dice() {
+
+                num1 = Math.floor(Math.random() * 6) + 1;
+                num2 = Math.floor(Math.random() * 6) + 1;
+                $('#dice_a').attr("src", 'dice' + (num1) + '.jpg');
+                $('#dice_b').attr("src", 'dice' + (num2) + '.jpg');
+            }
+
+            $('#btn').click(function () {
+                let timer = setInterval(dice, 100);
+                $("#atari").fadeOut("slow");
+                $("#hazure").fadeOut("slow");
+
+                setTimeout(function () {
+                    clearInterval(timer);
+
+                    if (num1 === num2) {
+                        // $('#hantei').text("あたり");
+                        $("#atari").fadeIn("slow");
+
+                    } else {
+                        // $('#hantei').text("はずれ");
+                        $("#hazure").fadeIn("slow");
+                    }
+                }, 1000);
+            })
+        });
+
+    </script>
+</head>
+
+
+<body>
+    <div id="saikoro" class="big-bg">
+
+        <h2>ぞろ目が出たら当たり！！</h2>
+        <div class="photo">
+            <img id="dice_a" src="dice1.jpg">
+            <img id="dice_b" src="dice1.jpg">
+        </div>
+        <div class="kekka">
+            <button id="btn">サイコロ振る</button>
+            <p id="hantei"></p>
+        </div>
+
+        <div id="atari" class="phote">
+            <img src="atari.jpg">
+        </div>
+
+        <div id="hazure" class="phote">
+            <img src="hazure.jpg">
+        </div>
+
+    </div>
+
+</body>
+
+</html>

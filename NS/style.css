@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+html {
+   font-size: 100%;
+}
+body{
+   font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+   line-height: 1.7;
+   color: rgb(250, 247, 244);
+}
+
+#saikoro {
+   background-image: url(nebuta.JPG);
+   min-height: 100vh;
+   background-size: 100%;
+}
+
+
+#saikoro h2 {
+   font-size: 3.5rem;
+   margin: 10px;
+   text-align: center;
+}
+
+.photo {
+   margin:0 auto;
+   width: 500px;
+   text-align: center;
+}
+
+.kekka {
+   text-align: center;
+   font-size: 2rem;
+   font-weight: bold;
+}
+#total {
+   color: black;
+   font-weight: bold;
+}
+
+#hantei {
+   color: red;
+   font-weight: bold;
+}
+
+#atari {
+   display: none;
+   text-align: center;
+}
+#hazure {
+   display: none;
+   text-align: center;
+}
